@@ -3,6 +3,6 @@
 // posthogKey é a Project API key pública (phc_...); vazia = analytics desligado.
 window.UTUTENA_CONFIG = {
 	turnstileSiteKey: '0x4AAAAAAF5nQ6BNGyoIX_uN',
-	posthogKey: '',
+	posthogKey: 'phc_zUets8drRet7647v3Yu4jqSuKAhT8Dfc7h4z2z3ijwiM',
 	posthogHost: 'https://eu.i.posthog.com'
 }
