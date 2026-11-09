@@ -1,0 +1,6 @@
+# Copiar para .dev.vars e preencher apenas localmente. NÃO publicar no Git.
+RESEND_API_KEY="re_xxxxxxxxxxxxxxxxxxx"
+UTUTENA_FROM_EMAIL="Ututena <info@ututena.com>"
+UTUTENA_TO_EMAIL="info@ututena.com"
+TURNSTILE_SECRET_KEY="0x4xxxxxxxxxxxxxxxxxxxxx"
+TURNSTILE_ALLOWED_HOSTNAMES="localhost,ututena.com,www.ututena.com"
