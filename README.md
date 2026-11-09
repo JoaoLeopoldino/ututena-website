@@ -41,11 +41,11 @@ Página estática, sem framework/bundler, com UI interactiva e endpoint serverle
 ```bash
 npm install
 npx wrangler login
-npx wrangler pages project create ututena --production-branch main
+npx wrangler pages project create ututena-website --production-branch main
 npm run deploy
 ```
 
-Definir os segredos através do Dashboard ou CLI (`npx wrangler pages secret put RESEND_API_KEY --project-name ututena`, repetindo para os restantes), antes de activar os envios.
+Definir os segredos através do Dashboard ou CLI (`npx wrangler pages secret put RESEND_API_KEY --project-name ututena-website`, repetindo para os restantes), antes de activar os envios.
 
 ## Desenvolvimento e testes
 
