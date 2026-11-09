@@ -161,6 +161,7 @@ function initLeadForm() {
 			window.dispatchEvent(new CustomEvent('ututena:lead-success', { detail: { challenge: data.challenge } }))
 		} catch (error) {
 			showFormMessage(error.message + ' Pode contactar-nos por info@ututena.com.', 'error')
+			window.dispatchEvent(new CustomEvent('ututena:lead-error', { detail: { reason: error.message } }))
 			resetTurnstile()
 		} finally {
 			button.disabled = false
