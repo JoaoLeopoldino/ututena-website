@@ -1,0 +1,40 @@
+# Ututena
+
+> Ututena é uma plataforma LMS empresarial com inteligência artificial, implementada e suportada em Angola pela Utu Lab (UTU LAB – COMÉRCIO E SERVIÇOS (SU), LDA., Luanda). Combina criação de cursos assistida por IA, mentor virtual, simulações práticas, certificações e gestão de competências com serviços de implementação, integração e suporte local.
+
+O núcleo tecnológico baseia-se no projecto open source Mentingo, adaptado e evoluído pela Utu Lab. As funcionalidades activadas, incluindo as de IA e o fornecedor de modelos, são definidas em cada implantação.
+
+## Plataforma
+
+- Criação de cursos a partir de documentos internos (políticas, procedimentos), com revisão editorial da equipa
+- Mentor virtual com IA por chat e voz, e simulações de conversas para praticar situações de trabalho
+- Questões abertas e cenários práticos com feedback assistido por IA
+- Percursos de formação, certificações com validades e renovações, matrizes de competências por função
+- Relatórios por colaborador, grupo e curso
+- White-label e multi-tenant (marca, domínios, ambientes por organização)
+- SSO e APIs para integração com RH, ERP e autenticação empresarial
+- Exportação SCORM 1.2
+
+## Serviços
+
+- Implementação e migração de conteúdos
+- Integrações e automação conforme os requisitos do projecto
+- Capacitação dos responsáveis, manutenção, suporte e evolução contínua
+- Método em quatro fases: Descobrir, Desenhar, Implementar, Evoluir
+
+## Para quem
+
+Recursos Humanos, Formação & L&D, Operações e Tecnologia, em sectores como Indústria & Construção, Banca & Seguros e Serviços.
+
+## Preço
+
+O investimento depende do número de utilizadores, migração, personalizações, infra-estrutura e suporte. É preparada uma proposta após um diagnóstico inicial.
+
+## Contacto
+
+- Site: https://ututena.com/
+- Pedido de demonstração: https://ututena.com/#diagnostico
+- E-mail: info@ututena.com
+- Telefone / WhatsApp: +244 972 856 085
+- Facebook: https://www.facebook.com/ututena
+- Privacidade: https://ututena.com/privacidade

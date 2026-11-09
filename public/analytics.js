@@ -44,7 +44,7 @@ function initConsentBanner(onChoice) {
 	banner.className = 'consent-banner'
 	banner.setAttribute('role', 'region')
 	banner.setAttribute('aria-label', 'Preferências de estatísticas')
-	banner.innerHTML = '<p>Usamos estatísticas de utilização para melhorar esta página. Com a sua autorização, guardamos um identificador no navegador e gravamos sessões anónimas (sem o conteúdo dos campos). <a href="/privacidade.html">Saber mais</a></p>' +
+	banner.innerHTML = '<p>Usamos estatísticas de utilização para melhorar esta página. Com a sua autorização, guardamos um identificador no navegador e gravamos sessões anónimas (sem o conteúdo dos campos). <a href="/privacidade">Saber mais</a></p>' +
 		'<div class="consent-actions"><button type="button" class="consent-decline">Recusar</button><button type="button" class="consent-accept">Aceitar</button></div>'
 	function close(value) {
 		storeConsent(value)
