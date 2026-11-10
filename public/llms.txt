@@ -12,22 +12,29 @@ Lema: "Aprender para ser capaz." A Ututena é construída sobre o núcleo open s
 
 ## Plataforma
 
-- Cursos, lições, questionários e percursos por equipa, função ou unidade
-- Competências: frameworks, níveis, funções simultâneas, lacunas, evidências e planos individuais
-- Certificados com marca, validade, verificação pública, revogação e recertificação automática
-- Relatórios por unidade, função e formação; exportação para Power BI
+- Interface em português de Angola; versão em inglês em preparação
+- Criação de cursos a partir de documentos internos (políticas, procedimentos), com revisão editorial da equipa
+- Mentor virtual com IA por chat e voz, e simulações de conversas para praticar situações de trabalho
+- Questões abertas e cenários práticos com feedback assistido por IA
+- Cursos, lições, questionários e percursos de formação por equipa, função ou unidade
+- Matrizes de competências por função: frameworks, níveis, funções simultâneas, lacunas, evidências e planos individuais
+- Certificações com marca, validades e renovações: verificação pública, revogação, recertificação automática e publicação do certificado no perfil LinkedIn do colaborador
+- Relatórios por colaborador, grupo, curso, unidade e função; exportação para Power BI
 - SSO com Microsoft 365, Google Workspace e Slack; autenticação de dois factores
 - Conectores para Primavera ERP e Microsoft 365/Teams; API documentada; importação e exportação CSV/XLSX
-- Marca própria e multi-organização com isolamento de dados na base de dados
+- White-label e multi-tenant: marca, domínios e ambientes por organização, com isolamento de dados na base de dados
 - Conectividade limitada: vídeo adaptativo (HLS) e modo offline para texto, PDF e questionários com sincronização, validado em cada projecto
 - Conteúdos: editor nativo, PDF, vídeo e SCORM 1.2 (SCORM 2004 e xAPI não incluídos de raiz)
 
 ## Serviço
 
+- Método em quatro fases: Descobrir, Desenhar, Implementar, Evoluir
 - Piloto empresarial de 30 dias, até 100 participantes e um caso de uso
 - Implementação completa em 12 a 16 semanas: diagnóstico, configuração, migração e integrações, testes com utilizadores e formação, entrada em produção
 - Pagamento da implementação por marcos de aceitação formal
-- Migração a partir de outro LMS (ex.: Totara): utilizadores, estrutura, cursos, matrículas, histórico, certificados e competências, com reconciliação
+- Implementação e migração de conteúdos a partir de outro LMS (ex.: Totara): utilizadores, estrutura, cursos, matrículas, histórico, certificados e competências, com reconciliação
+- Integrações e automação conforme os requisitos do projecto
+- Capacitação dos responsáveis (administradores e formadores), manutenção, suporte e evolução contínua
 - Serviço gerido mensal: alojamento, manutenção, actualizações de segurança, monitorização, cópias de segurança diárias (retenção de 30 dias), helpdesk e relatório mensal
 - Suporte em português por equipa em Angola, dias úteis 08h30–17h30 (hora de Angola); primeira resposta até 1 hora útil para incidentes críticos; 24/7 opcional
 
