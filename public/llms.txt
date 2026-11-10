@@ -57,6 +57,7 @@ Sob proposta. Implementação única + mensalidade de serviço gerido, conforme 
 ## Contacto
 
 - Site: https://ututena.com/
+- English version: https://ututena.com/en/
 - Pedido de demonstração: https://ututena.com/#diagnostico
 - E-mail: info@ututena.com
 - Telefone / WhatsApp: +244 972 856 085

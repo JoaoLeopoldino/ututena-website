@@ -1,5 +1,9 @@
 'use strict'
 
+// Páginas em inglês (/en/) usam os mesmos scripts; os textos mudam pelo atributo lang.
+const EN = document.documentElement.lang.startsWith('en')
+function t(pt, en) { return EN ? en : pt }
+
 function initNavigation() {
 	const menuToggle = document.getElementById('menuToggle')
 	const navLinks = document.getElementById('navLinks')
@@ -8,7 +12,7 @@ function initNavigation() {
 		const open = !document.body.classList.contains('menu-open')
 		document.body.classList.toggle('menu-open', open)
 		menuToggle.setAttribute('aria-expanded', String(open))
-		menuToggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu')
+		menuToggle.setAttribute('aria-label', open ? t('Fechar menu', 'Close menu') : t('Abrir menu', 'Open menu'))
 	})
 
 	navLinks?.querySelectorAll('a').forEach(function (link) {
@@ -19,7 +23,7 @@ function initNavigation() {
 	})
 
 	const mobileCTA = document.querySelector('.mobile-cta')
-	const leadSection = document.getElementById('diagnostico')
+	const leadSection = document.getElementById('diagnostico') || document.getElementById('contact')
 	const heroSection = document.querySelector('.hero')
 	if (mobileCTA && leadSection && heroSection && 'IntersectionObserver' in window) {
 		let heroVisible = true
@@ -140,11 +144,11 @@ function initLeadForm() {
 		const data = Object.fromEntries(new FormData(form).entries())
 		data.consent = document.querySelector('[name="consent"]').checked
 		if (window.UTUTENA_CONFIG?.turnstileSiteKey && !data['cf-turnstile-response']) {
-			showFormMessage('Confirme a verificação de segurança para enviar o pedido.', 'error')
+			showFormMessage(t('Confirme a verificação de segurança para enviar o pedido.', 'Please complete the security check to send your request.'), 'error')
 			return
 		}
 		button.disabled = true
-		button.textContent = 'A enviar…'
+		button.textContent = t('A enviar…', 'Sending…')
 
 		try {
 			const response = await fetch('/api/leads', {
@@ -153,19 +157,25 @@ function initLeadForm() {
 				body: JSON.stringify(data)
 			})
 			const result = await response.json().catch(function () { return {} })
-			if (!response.ok || !result.ok) throw new Error(result.message || 'Não foi possível enviar o pedido.')
-			showFormMessage('Pedido recebido. Entraremos em contacto através do e-mail indicado.', 'success')
+			if (!response.ok || !result.ok) {
+				// As mensagens do servidor estão em português; em inglês usa-se uma mensagem por tipo de erro.
+				const enMessage = response.status === 422 ? 'Please check the required fields and the contact consent.'
+					: response.status === 403 ? 'The security check failed or expired. Please try again.'
+						: 'We could not send your request right now.'
+				throw new Error(EN ? enMessage : (result.message || 'Não foi possível enviar o pedido.'))
+			}
+			showFormMessage(t('Pedido recebido. Entraremos em contacto através do e-mail indicado.', 'Request received. We will get back to you at the email address provided.'), 'success')
 			form.reset()
 			trackLeadSource()
 			resetTurnstile()
 			window.dispatchEvent(new CustomEvent('ututena:lead-success', { detail: { challenge: data.challenge } }))
 		} catch (error) {
-			showFormMessage(error.message + ' Pode contactar-nos por info@ututena.com.', 'error')
+			showFormMessage(error.message + t(' Pode contactar-nos por info@ututena.com.', ' You can also reach us at info@ututena.com.'), 'error')
 			window.dispatchEvent(new CustomEvent('ututena:lead-error', { detail: { reason: error.message } }))
 			resetTurnstile()
 		} finally {
 			button.disabled = false
-			button.innerHTML = 'Enviar pedido <span aria-hidden="true">↗</span>'
+			button.innerHTML = t('Enviar pedido', 'Send request') + ' <span aria-hidden="true">↗</span>'
 		}
 	})
 }
@@ -210,7 +220,9 @@ function initMotion() {
 	const caption = document.querySelector('[data-hero-caption]')
 	let stageIndex = 0
 	let stageTimer
-	const labels = ['Preparar conteúdos de aprendizagem', 'Praticar com o mentor IA', 'Acompanhar a evolução da equipa']
+	const labels = EN
+		? ['Preparing learning content', 'Practising with the AI mentor', 'Tracking team progress']
+		: ['Preparar conteúdos de aprendizagem', 'Praticar com o mentor IA', 'Acompanhar a evolução da equipa']
 	function updateHeroStage(next) {
 		stageIndex = next
 		stages.forEach(function (stage, index) { stage.classList.toggle('is-stage-active', index === stageIndex) })
@@ -305,8 +317,8 @@ function initMotion() {
 		userPaused = paused
 		if (toggle) {
 			toggle.setAttribute('aria-pressed', String(paused))
-			toggle.setAttribute('aria-label', paused ? 'Retomar a sequência automática' : 'Pausar a sequência automática')
-			toggle.innerHTML = paused ? 'Reproduzir <span aria-hidden="true">▶</span>' : 'Pausar <span aria-hidden="true">Ⅱ</span>'
+			toggle.setAttribute('aria-label', paused ? t('Retomar a sequência automática', 'Resume the automatic sequence') : t('Pausar a sequência automática', 'Pause the automatic sequence'))
+			toggle.innerHTML = paused ? t('Reproduzir', 'Play') + ' <span aria-hidden="true">▶</span>' : t('Pausar', 'Pause') + ' <span aria-hidden="true">Ⅱ</span>'
 		}
 		document.body.classList.toggle('motion-paused', paused)
 		if (trajectory && typeof trajectory.pauseAnimations === 'function') {
@@ -340,7 +352,7 @@ function initMotion() {
 		setPaused(true)
 		if (toggle) {
 			toggle.disabled = true
-			toggle.textContent = 'Movimento reduzido'
+			toggle.textContent = t('Movimento reduzido', 'Reduced motion')
 		}
 	} else syncCycle()
 }

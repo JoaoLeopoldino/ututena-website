@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-	<url><loc>https://ututena.com/</loc><lastmod>2026-11-10</lastmod></url>
-	<url><loc>https://ututena.com/privacidade</loc><lastmod>2026-11-09</lastmod></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+	<url><loc>https://ututena.com/</loc><lastmod>2026-11-10</lastmod><xhtml:link rel="alternate" hreflang="pt-AO" href="https://ututena.com/"/><xhtml:link rel="alternate" hreflang="en" href="https://ututena.com/en/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://ututena.com/"/></url>
+	<url><loc>https://ututena.com/en/</loc><lastmod>2026-11-10</lastmod><xhtml:link rel="alternate" hreflang="pt-AO" href="https://ututena.com/"/><xhtml:link rel="alternate" hreflang="en" href="https://ututena.com/en/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://ututena.com/"/></url>
+	<url><loc>https://ututena.com/privacidade</loc><lastmod>2026-11-10</lastmod><xhtml:link rel="alternate" hreflang="pt-AO" href="https://ututena.com/privacidade"/><xhtml:link rel="alternate" hreflang="en" href="https://ututena.com/en/privacy"/></url>
+	<url><loc>https://ututena.com/en/privacy</loc><lastmod>2026-11-10</lastmod><xhtml:link rel="alternate" hreflang="pt-AO" href="https://ututena.com/privacidade"/><xhtml:link rel="alternate" hreflang="en" href="https://ututena.com/en/privacy"/></url>
 </urlset>

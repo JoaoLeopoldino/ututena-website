@@ -6,6 +6,7 @@
  * Form values are never sent; events only carry labels and the selected challenge. */
 
 const CONSENT_KEY = 'ututena_analytics_consent'
+const BANNER_EN = document.documentElement.lang.startsWith('en')
 
 function readConsent() {
 	try { return window.localStorage.getItem(CONSENT_KEY) } catch (error) { return null }
@@ -43,9 +44,12 @@ function initConsentBanner(onChoice) {
 	const banner = document.createElement('div')
 	banner.className = 'consent-banner'
 	banner.setAttribute('role', 'region')
-	banner.setAttribute('aria-label', 'Preferências de estatísticas')
-	banner.innerHTML = '<p>Usamos estatísticas de utilização para melhorar esta página. Com a sua autorização, guardamos um identificador no navegador e gravamos sessões anónimas (sem o conteúdo dos campos). <a href="/privacidade">Saber mais</a></p>' +
-		'<div class="consent-actions"><button type="button" class="consent-decline">Recusar</button><button type="button" class="consent-accept">Aceitar</button></div>'
+	banner.setAttribute('aria-label', BANNER_EN ? 'Analytics preferences' : 'Preferências de estatísticas')
+	banner.innerHTML = BANNER_EN
+		? '<p>We use usage analytics to improve this page. With your permission, we store an identifier in your browser and record anonymous sessions (without the content of form fields). <a href="/en/privacy">Read the privacy notice</a></p>' +
+			'<div class="consent-actions"><button type="button" class="consent-decline">Decline</button><button type="button" class="consent-accept">Accept</button></div>'
+		: '<p>Usamos estatísticas de utilização para melhorar esta página. Com a sua autorização, guardamos um identificador no navegador e gravamos sessões anónimas (sem o conteúdo dos campos). <a href="/privacidade">Saber mais</a></p>' +
+			'<div class="consent-actions"><button type="button" class="consent-decline">Recusar</button><button type="button" class="consent-accept">Aceitar</button></div>'
 	function close(value) {
 		storeConsent(value)
 		banner.remove()
@@ -87,7 +91,7 @@ function initAnalytics() {
 		})
 	})
 
-	document.querySelectorAll('a[href="#diagnostico"]').forEach(function (link) {
+	document.querySelectorAll('a[href="#diagnostico"], a[href="#contact"]').forEach(function (link) {
 		link.addEventListener('click', function () {
 			track('cta_clicked', {
 				label: link.textContent.replace(/[↗→]/g, '').trim().slice(0, 80),
