@@ -12,7 +12,7 @@ Lema: "Aprender para ser capaz." A Ututena é construída sobre o núcleo open s
 
 ## Plataforma
 
-- Interface em português de Angola; versão em inglês em preparação
+- Interface em português de Angola e inglês, e também em espanhol, francês, alemão, polaco e checo
 - Criação de cursos a partir de documentos internos (políticas, procedimentos), com revisão editorial da equipa
 - Mentor virtual com IA por chat e voz, e simulações de conversas para praticar situações de trabalho
 - Questões abertas e cenários práticos com feedback assistido por IA
