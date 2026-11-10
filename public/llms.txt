@@ -18,7 +18,7 @@ Lema: "Aprender para ser capaz." A Ututena é construída sobre o núcleo open s
 - Questões abertas e cenários práticos com feedback assistido por IA
 - Cursos, lições, questionários e percursos de formação por equipa, função ou unidade
 - Matrizes de competências por função: frameworks, níveis, funções simultâneas, lacunas, evidências e planos individuais
-- Certificações com marca, validades e renovações: verificação pública, revogação, recertificação automática e publicação do certificado no perfil LinkedIn do colaborador
+- Certificações com marca, validades e renovações: verificação pública, revogação, recertificação automática e publicação do certificado no perfil LinkedIn do colaborador, com a organização cliente como emissora
 - Relatórios por colaborador, grupo, curso, unidade e função; exportação para Power BI
 - SSO com Microsoft 365, Google Workspace e Slack; autenticação de dois factores
 - Conectores para Primavera ERP e Microsoft 365/Teams; API documentada; importação e exportação CSV/XLSX
