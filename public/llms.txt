@@ -54,6 +54,10 @@ Organizações com várias unidades e equipas distribuídas: construção, engen
 
 Sob proposta. Implementação única + mensalidade de serviço gerido, conforme utilizadores, migração, integrações e personalizações.
 
+## English summary
+
+Ututena is an enterprise learning and skills management platform by Utu Lab (Luanda, Angola). It combines training, skills matrices, certifications (shareable on LinkedIn, with the client organisation as issuer) and optional AI (assisted course authoring, a text and voice AI mentor, simulations and assisted assessment) with implementation, integration, managed hosting and support. Built on the open source Mentingo core (MIT licence) and extended with Utu Lab's own modules. Interface in English, Angolan Portuguese, Spanish, French, German, Polish and Czech; support in English and Portuguese, business days 08:30–17:30 Angola time. Integrations: Microsoft 365, Google Workspace, Slack SSO; Primavera ERP; Power BI; documented API; SCORM 1.2. Limited-connectivity support: adaptive video and offline mode for text, PDF and quizzes, validated per project. EU hosting by default. 30-day pilot or 12–16-week implementation. Pricing by proposal. English page: https://ututena.com/en/
+
 ## Contacto
 
 - Site: https://ututena.com/
