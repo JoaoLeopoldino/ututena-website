@@ -1,6 +1,6 @@
 # Ututena
 
-> Ututena é uma plataforma empresarial de aprendizagem e gestão de competências da Utu Lab (UTU LAB – COMÉRCIO E SERVIÇOS (SU), LDA., Luanda, Angola). Junta formação, competências, certificações e IA opcional a serviços de implementação, integração, alojamento gerido e suporte em português, para organizações com equipas distribuídas e conectividade variável.
+> Ututena é uma plataforma empresarial de aprendizagem e gestão de competências da Utu Lab (UTU LAB – COMÉRCIO E SERVIÇOS (SU), LDA., Luanda, Angola). Junta formação, competências, certificações e IA opcional a serviços de implementação, integração, alojamento gerido e suporte em português e inglês, para organizações com equipas distribuídas e conectividade variável.
 
 Lema: "Aprender para ser capaz." A Ututena é construída sobre o núcleo open source Mentingo (licença MIT) e estendida pela Utu Lab com módulos próprios. Não há licença de software cobrada à parte: o direito de utilização está incluído no serviço gerido.
 
@@ -36,7 +36,7 @@ Lema: "Aprender para ser capaz." A Ututena é construída sobre o núcleo open s
 - Integrações e automação conforme os requisitos do projecto
 - Capacitação dos responsáveis (administradores e formadores), manutenção, suporte e evolução contínua
 - Serviço gerido mensal: alojamento, manutenção, actualizações de segurança, monitorização, cópias de segurança diárias (retenção de 30 dias), helpdesk e relatório mensal
-- Suporte em português por equipa em Angola, dias úteis 08h30–17h30 (hora de Angola); primeira resposta até 1 hora útil para incidentes críticos; 24/7 opcional
+- Suporte em português e inglês por equipa em Angola, dias úteis 08h30–17h30 (hora de Angola); primeira resposta até 1 hora útil para incidentes críticos; 24/7 opcional
 
 ## Dados e segurança
 
