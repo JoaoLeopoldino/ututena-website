@@ -103,7 +103,7 @@ function initAnalytics() {
 
 	const channels = [
 		['wa.me', 'whatsapp'], ['m.me', 'messenger'], ['facebook.com', 'facebook'],
-		['mailto:', 'email'], ['tel:', 'phone']
+		['linkedin.com', 'linkedin'], ['mailto:', 'email'], ['tel:', 'phone']
 	]
 	document.querySelectorAll('a[href]').forEach(function (link) {
 		const href = link.getAttribute('href')

@@ -66,4 +66,5 @@ Ututena is an enterprise learning and skills management platform by Utu Lab (Lua
 - E-mail: info@ututena.com
 - Telefone / WhatsApp: +244 972 856 085
 - Facebook: https://www.facebook.com/ututena
+- LinkedIn: https://www.linkedin.com/company/ututena/
 - Privacidade: https://ututena.com/privacidade
