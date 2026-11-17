@@ -3,7 +3,8 @@
 /* ── PostHog analytics with consent. Inactive while posthogKey is empty. ──
  * Before a choice (or after "Recusar") PostHog runs in memory only: no cookies,
  * no localStorage, no session replay. "Aceitar" enables persistence and replay.
- * Form values are never sent; events only carry labels and the selected challenge. */
+ * Form values are never sent; events only carry labels and the selected challenge.
+ * The LinkedIn Insight Tag (ad measurement) only loads after "Aceitar". */
 
 const CONSENT_KEY = 'ututena_analytics_consent'
 const BANNER_EN = document.documentElement.lang.startsWith('en')
@@ -40,15 +41,27 @@ function loadPostHog(key, host, granted, onReady) {
 	document.head.appendChild(script)
 }
 
+function loadLinkedInTag(partnerId) {
+	if (!partnerId || window._linkedin_data_partner_ids) return
+	window._linkedin_partner_id = partnerId
+	window._linkedin_data_partner_ids = [partnerId]
+	window.lintrk = window.lintrk || function (a, b) { window.lintrk.q.push([a, b]) }
+	window.lintrk.q = window.lintrk.q || []
+	const script = document.createElement('script')
+	script.src = 'https://snap.licdn.com/li.lms-analytics/insight.min.js'
+	script.async = true
+	document.head.appendChild(script)
+}
+
 function initConsentBanner(onChoice) {
 	const banner = document.createElement('div')
 	banner.className = 'consent-banner'
 	banner.setAttribute('role', 'region')
 	banner.setAttribute('aria-label', BANNER_EN ? 'Analytics preferences' : 'Preferências de estatísticas')
 	banner.innerHTML = BANNER_EN
-		? '<p>We use usage analytics to improve this page. With your permission, we store an identifier in your browser and record anonymous sessions (without the content of form fields). <a href="/en/privacy">Read the privacy notice</a></p>' +
+		? '<p>We use usage analytics to improve this page. With your permission, we store an identifier in your browser and record anonymous sessions (without the content of form fields). We also measure the results of our LinkedIn ads. <a href="/en/privacy">Read the privacy notice</a></p>' +
 			'<div class="consent-actions"><button type="button" class="consent-decline">Decline</button><button type="button" class="consent-accept">Accept</button></div>'
-		: '<p>Usamos estatísticas de utilização para melhorar esta página. Com a sua autorização, guardamos um identificador no navegador e gravamos sessões anónimas (sem o conteúdo dos campos). <a href="/privacidade">Saber mais</a></p>' +
+		: '<p>Usamos estatísticas de utilização para melhorar esta página. Com a sua autorização, guardamos um identificador no navegador e gravamos sessões anónimas (sem o conteúdo dos campos). Medimos também os resultados dos nossos anúncios no LinkedIn. <a href="/privacidade">Saber mais</a></p>' +
 			'<div class="consent-actions"><button type="button" class="consent-decline">Recusar</button><button type="button" class="consent-accept">Aceitar</button></div>'
 	function close(value) {
 		storeConsent(value)
@@ -72,7 +85,9 @@ function initAnalytics() {
 		else pending.push([event, properties])
 	}
 	function applyConsent(value) {
-		if (!ready || value !== 'granted') return
+		if (value !== 'granted') return
+		loadLinkedInTag(window.UTUTENA_CONFIG?.linkedinPartnerId)
+		if (!ready) return
 		window.posthog.set_config({ persistence: 'localStorage+cookie', disable_session_recording: false })
 		window.posthog.startSessionRecording()
 	}
@@ -82,6 +97,7 @@ function initAnalytics() {
 		ready = true
 		pending.splice(0).forEach(function (item) { window.posthog.capture(item[0], item[1]) })
 	})
+	if (consent === 'granted') loadLinkedInTag(window.UTUTENA_CONFIG?.linkedinPartnerId)
 	if (!consent) initConsentBanner(applyConsent)
 
 	document.querySelectorAll('[data-consent-reopen]').forEach(function (link) {
